@@ -41,7 +41,7 @@ function approve_transfer (const t : transfer; var s : storage) : return is
     s.transfer_approvals [t] := add_approval (t, s)
   } with (no_operations, s)
 
-function send_transfer (const t : transfer; const s : storage) : return is
+function send_transfer (const t : transfer; var s : storage) : return is
   block {
     validate_transfer (t, s);
     const deposit : deposit_contract = 
