@@ -16,7 +16,7 @@ Located in `scripts/quorum`
 ```
 ./compile_storage TRUSTED_FILENAME THRESHOLD DEPOSIT_ADDRESS ADMIN_ADDRESS
 ```
-* `TRUSTED_FILENAME` &ndash; path to file containing trusted addresses, one on each line
+* `TRUSTED_FILENAME` &ndash; path to file containing trusted addresses, one on each line. The file must not be empty.
   
   Example file:
 
