@@ -1,0 +1,5 @@
+#!/bin/bash
+
+trusted_addrs="$(sed 's/^/("/; s/$/" : address)/' ./"$1" | paste -s -d ";" | sed 's/;/; /')"
+
+ligo compile storage ../../quorum/quorum.ligo "record [trusted_addresses = set [$trusted_addrs]; transfer_approvals = (big_map [] : big_map (record [receiver : address; amt : tez], set (address))); threshold = $2n; deposit_address = (\"$3\" : address); admin_address = (\"$4\" : address)]" --entry-point main
